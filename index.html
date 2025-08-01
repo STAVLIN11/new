@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skyway Health Food</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Skyway Logo" class="center-logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product" id="dcare">
+      <img src="dcare.jpg" alt="D Care" />
+      <h2>D Care - ₹2500</h2>
+      <p>English: Helps in diabetes control...<br/>Tamil: சர்க்கரை நோயை கட்டுப்படுத்துகிறது...<br/>Malayalam: പ്രമേഹം നിയന്ത്രിക്കുന്നു...</p>
+      <button onclick="addToCart('D Care', 2500, 'dcare.jpg')">Add to Cart</button>
+    </section>
+
+    <section class="product" id="bonecare">
+      <img src="bonecare.jpg" alt="Bone Care" />
+      <h2>Bone Care - ₹2000</h2>
+      <p>English: Strengthens bones...<br/>Tamil: எலும்புகளை வலுப்படுத்துகிறது...<br/>Malayalam: അസ്ഥികളെ ശക്തിപ്പെടുത്തുന്നു...</p>
+      <button onclick="addToCart('Bone Care', 2000, 'bonecare.jpg')">Add to Cart</button>
+    </section>
+
+    <section class="product" id="nutrimix">
+      <img src="nutrimix.jpg" alt="Nutri Mix" />
+      <h2>Nutri Mix - ₹2000</h2>
+      <p>English: Provides essential nutrients...<br/>Tamil: தேவையான ஊட்டச்சத்துக்களை வழங்குகிறது...<br/>Malayalam: ആവശ്യമായ പോഷകങ്ങൾ നൽകുന്നു...</p>
+      <button onclick="addToCart('Nutri Mix', 2000, 'nutrimix.jpg')">Add to Cart</button>
+    </section>
+
+    <section class="product" id="slimcare">
+      <img src="slimcare.jpg" alt="Slim Care" />
+      <h2>Slim Care - ₹2000</h2>
+      <p>English: Aids in weight loss...<br/>Tamil: எடையைக் குறைக்க உதவுகிறது...<br/>Malayalam: ഭാരം കുറയ്ക്കാൻ സഹായിക്കുന്നു...</p>
+      <button onclick="addToCart('Slim Care', 2000, 'slimcare.jpg')">Add to Cart</button>
+    </section>
+  </main>
+
+  <script>
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(p => p.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1, image });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(name + " added to cart!");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+.center-logo {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+nav a {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: yellowgreen;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product {
+  background-color: rgba(211, 211, 211, 0.7);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product img {
+  width: 200px;
+  height: auto;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: yellowgreen;
+  border: none;
+  cursor: pointer;
+}

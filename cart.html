@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Skyway</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-image: url('background2.png'); background-size: cover;">
+  <header>
+    <img src="logo.png" alt="Skyway Logo" class="center-logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="total"></div>
+  </main>
+
+  <script>
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItems = document.getElementById("cart-items");
+      const totalDiv = document.getElementById("total");
+
+      cartItems.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Cart is empty.</p>";
+        totalDiv.innerHTML = "";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.innerHTML = \`
+          <img src="\${item.image}" alt="\${item.name}" style="width:100px" />
+          <strong>\${item.name}</strong> - ₹\${item.price} × 
+          <input type="number" value="\${item.quantity}" min="1" onchange="updateQuantity(\${index}, this.value)" />
+          <br/><br/>
+        \`;
+        cartItems.appendChild(itemDiv);
+        total += item.price * item.quantity;
+      });
+
+      totalDiv.innerHTML = "<h3>Total: ₹" + total + "</h3>";
+    }
+
+    function updateQuantity(index, quantity) {
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      cart[index].quantity = parseInt(quantity);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
