@@ -4,58 +4,193 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skyway Health Food</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: black;
+    }
+
+    .logo {
+      display: block;
+      margin: 30px auto 10px auto;
+      width: 250px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .nav a {
+      background: green;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .product {
+      background-color: rgba(200, 200, 200, 0.7);
+      margin: 50px auto;
+      padding: 30px;
+      width: 90%;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #999;
+    }
+
+    .product h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .product-images {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .product-images img {
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .add-to-cart {
+      display: block;
+      background: yellow;
+      color: black;
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 20px auto 0 auto;
+      width: 200px;
+      font-weight: bold;
+    }
+
+    .benefits {
+      margin-top: 20px;
+    }
+
+    .benefits h4 {
+      margin-bottom: 5px;
+      color: darkblue;
+    }
+
+    .benefits ul {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Skyway Logo" class="center-logo" />
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cart.html">Cart</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="product" id="dcare">
-      <img src="dcare.jpg" alt="D Care" />
-      <h2>D Care - ₹2500</h2>
-      <p>English: Helps in diabetes control...<br/>Tamil: சர்க்கரை நோயை கட்டுப்படுத்துகிறது...<br/>Malayalam: പ്രമേഹം നിയന്ത്രിക്കുന്നു...</p>
-      <button onclick="addToCart('D Care', 2500, 'dcare.jpg')">Add to Cart</button>
-    </section>
+  <img src="logo.png" alt="Skyway Logo" class="logo" />
 
-    <section class="product" id="bonecare">
-      <img src="bonecare.jpg" alt="Bone Care" />
-      <h2>Bone Care - ₹2000</h2>
-      <p>English: Strengthens bones...<br/>Tamil: எலும்புகளை வலுப்படுத்துகிறது...<br/>Malayalam: അസ്ഥികളെ ശക്തിപ്പെടുത്തുന്നു...</p>
-      <button onclick="addToCart('Bone Care', 2000, 'bonecare.jpg')">Add to Cart</button>
-    </section>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="meetings.html">Meetings</a>
+  </div>
 
-    <section class="product" id="nutrimix">
-      <img src="nutrimix.jpg" alt="Nutri Mix" />
-      <h2>Nutri Mix - ₹2000</h2>
-      <p>English: Provides essential nutrients...<br/>Tamil: தேவையான ஊட்டச்சத்துக்களை வழங்குகிறது...<br/>Malayalam: ആവശ്യമായ പോഷകങ്ങൾ നൽകുന്നു...</p>
-      <button onclick="addToCart('Nutri Mix', 2000, 'nutrimix.jpg')">Add to Cart</button>
-    </section>
+  <!-- Product: D Care -->
+  <div class="product">
+    <h2>D Care</h2>
+    <div class="product-images">
+      <img src="dcare1.jpg" alt="D Care Image 1" />
+      <img src="dcare2.jpg" alt="D Care Image 2" />
+    </div>
+    <div class="price">₹2500</div>
+    <button class="add-to-cart" onclick="addToCart('D Care', 2500)">Add to Cart</button>
+    <div class="benefits">
+      <h4>Benefits (English):</h4>
+      <ul>
+        <li>Controls blood sugar naturally</li>
+        <li>Improves insulin sensitivity</li>
+        <li>Boosts energy and vitality</li>
+        <li>Supports pancreas health</li>
+        <li>Improves vision clarity</li>
+        <li>Reduces fatigue in diabetic patients</li>
+        <li>Promotes metabolic health</li>
+        <li>Improves immunity</li>
+        <li>Reduces thirst & frequent urination</li>
+        <li>100% herbal and safe</li>
+        <li>Regulates appetite and digestion</li>
+        <li>Improves circulation</li>
+        <li>Supports kidney function</li>
+        <li>Promotes wound healing</li>
+        <li>Prevents diabetic complications</li>
+      </ul>
+      <h4>பயன்கள் (Tamil):</h4>
+      <ul>
+        <li>இன்சுலின் அழுத்தத்தை கட்டுப்படுத்தும்</li>
+        <li>சர்க்கரை அளவை சமநிலைப்படுத்தும்</li>
+        <li>உடல் சக்தியை உயர்த்தும்</li>
+        <li>இரத்தத்தில் சர்க்கரையின் அளவை குறைக்கும்</li>
+        <li>கண்களுக்கு நன்மை</li>
+        <li>தாக்கம் மற்றும் மந்தத்தை குறைக்கும்</li>
+        <li>உடல் பொறுப்பை மேம்படுத்தும்</li>
+        <li>சத்தான உடலை உருவாக்கும்</li>
+        <li>முழுமையான மூலிகை</li>
+        <li>சீரான பசியை கட்டுப்படுத்தும்</li>
+        <li>சுழற்சி முறை மேம்பட உதவும்</li>
+        <li>சிறுநீரகத்தை பாதுகாக்கும்</li>
+        <li>காயங்களை விரைவில் ஆற செய்யும்</li>
+        <li>இன்சுலின் சுரப்பை ஊக்குவிக்கும்</li>
+        <li>மருத்துவ பக்கவிளைவுகள் இல்லாமல் பயன்படும்</li>
+      </ul>
+      <h4>ഗുണങ്ങൾ (Malayalam):</h4>
+      <ul>
+        <li>രക്തത്തിലെ പഞ്ചസാര നില നിയന്ത്രിക്കുന്നു</li>
+        <li>ഇൻസുലിന്റെ ഫലപ്രാപ്തി മെച്ചപ്പെടുത്തുന്നു</li>
+        <li>ഉത്സാഹവും ഊർജവും വർധിപ്പിക്കുന്നു</li>
+        <li>അഗ്നാശയത്തിന് സംരക്ഷണം</li>
+        <li>കാഴ്ച ശക്തി മെച്ചപ്പെടുത്തുന്നു</li>
+        <li>ദാഹവും മൂത്രവുമുള്ള പ്രശ്നങ്ങൾ കുറയ്ക്കുന്നു</li>
+        <li>പ്രതിരോധശക്തി വർദ്ധിപ്പിക്കുന്നു</li>
+        <li>മറ്റു രോഗങ്ങൾ തടയുന്നു</li>
+        <li>ഹർബൽ ഘടകങ്ങൾ മാത്രം</li>
+        <li>ഭക്ഷണാപചയം മെച്ചപ്പെടുത്തുന്നു</li>
+        <li>വലിച്ചെടുക്കുന്ന രോഗങ്ങൾ തടയുന്നു</li>
+        <li>വേഗത്തിൽ മുറിവുകൾ ഭേദമാക്കുന്നു</li>
+        <li>വൃക്ക പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു</li>
+        <li>സഹജമായി സുഖപ്പെടുത്തുന്നു</li>
+        <li>പൂർണ്ണമായ ആരോഗ്യ സംരക്ഷണം നൽകുന്നു</li>
+      </ul>
+    </div>
+  </div>
 
-    <section class="product" id="slimcare">
-      <img src="slimcare.jpg" alt="Slim Care" />
-      <h2>Slim Care - ₹2000</h2>
-      <p>English: Aids in weight loss...<br/>Tamil: எடையைக் குறைக்க உதவுகிறது...<br/>Malayalam: ഭാരം കുറയ്ക്കാൻ സഹായിക്കുന്നു...</p>
-      <button onclick="addToCart('Slim Care', 2000, 'slimcare.jpg')">Add to Cart</button>
-    </section>
-  </main>
+  <!-- Repeat similar blocks for Slim Care, Bone Care, Nutri Mix, SkyFlax here -->
+  <!-- Let me know when you want the next product code, I’ll continue... -->
 
   <script>
-    function addToCart(name, price, image) {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const existing = cart.find(p => p.name === name);
-      if (existing) {
-        existing.quantity += 1;
+    function addToCart(product, price) {
+      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const index = cart.findIndex(p => p.name === product);
+      if (index !== -1) {
+        cart[index].quantity += 1;
       } else {
-        cart.push({ name, price, quantity: 1, image });
+        cart.push({ name: product, price: price, quantity: 1 });
       }
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert(name + " added to cart!");
+      alert(product + " added to cart!");
     }
   </script>
 </body>
