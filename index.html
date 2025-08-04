@@ -2,201 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skyway Health Food</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f2f2f2;
-      color: black;
-    }
-
-    nav {
-      background-color: #e1f5c4;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 20px;
-      font-size: 22px;
-      padding: 10px 20px;
-      background-color: #8bc34a;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .logo {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .logo img {
-      width: 160px;
-    }
-
-    .header-image {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .header-image img {
-      width: 95%;
-      border-radius: 10px;
-    }
-
-    section {
-      margin: 30px;
-      border-radius: 10px;
-      overflow: hidden;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      padding: 40px 20px;
-    }
-
-    .product-box {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .product-box h2 {
-      font-size: 28px;
-      text-align: center;
-    }
-
-    .product-box img {
-      width: 250px;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .product-box ul {
-      font-size: 20px;
-      padding-left: 20px;
-    }
-
-    .add-to-cart {
-      background-color: #ffeb3b;
-      color: black;
-      border: none;
-      padding: 12px 30px;
-      font-size: 20px;
-      border-radius: 8px;
-      display: block;
-      margin: 20px auto;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .product-box img {
-        width: 100%;
-      }
-
-      section {
-        margin: 10px;
-        padding: 20px 10px;
-      }
-
-      .product-box ul {
-        font-size: 18px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cart.html">Cart</a>
-    <a href="#">Meetings</a>
-  </nav>
-
-  <div class="logo">
-    <img src="logo.png" alt="Logo">
+  <!-- Logo -->
+  <div style="text-align:center; padding:20px;">
+    <img src="logo.png" alt="Logo" style="width:180px; max-width:90vw;">
   </div>
 
-  <div class="header-image">
-    <img src="1stimage.png" alt="Header Image">
+  <!-- Nav Buttons -->
+  <div style="text-align:center; margin-bottom:10px;">
+    <a href="index.html" style="background:green; color:white; padding:10px 20px; margin:5px; font-size:18px; text-decoration:none;">Home</a>
+    <a href="cart.html" style="background:yellow; color:black; padding:10px 20px; margin:5px; font-size:18px; text-decoration:none;">Cart</a>
+    <a href="#" style="background:orange; color:white; padding:10px 20px; margin:5px; font-size:18px; text-decoration:none;">Meetings</a>
   </div>
 
-  <!-- Example: D Care -->
-  <section style="background-image: url('dcare.png');">
-    <div class="product-box">
-      <h2>D Care (₹2500)</h2>
-      <img src="dcare.png" alt="D Care">
-      <img src="dcare.png" alt="D Care Second">
-      <ul>
-        <li>🟢 [English] Controls blood sugar naturally
-Improves insulin sensitivity
-Boosts energy and vitality
-Supports pancreas health
-Improves vision clarity
-Reduces fatigue in diabetic patients
-Promotes metabolic health
-Enhances immunity
-Reduces thirst & frequent urination
-100% herbal and safe
-Regulates appetite and digestion
-Improves circulation
-Supports kidney function
-Promotes wound healing
-Prevents diabetic complications</li>
-        <li>🟢 [Tamil] இன்சுலின் அழுத்தத்தை கட்டுப்படுத்தும்
-சர்க்கரை அளவை சமநிலைப்படுத்தும்
-உடல் சக்தியை உயர்த்தும்
-பித்தக்கோஷ ஆரோக்கியத்தை மேம்படுத்தும்
-கண்ணின் தெளிவை மேம்படுத்தும்
-நீண்ட நேர சோர்வை குறைக்கும்
-மெட்டபாலிசத்தை மேம்படுத்தும்
-நீரிழிவு நோயாளிகளுக்குப் பாதுகாப்பு
-நாக்கு உலர்வையும் சிறுநீரை அதிகம் கழிப்பதும் குறைக்கும்
-மூலிகை தயாரிப்பு
-உணவு மற்றும் ஜீரணத்தை ஒழுங்குபடுத்தும்
-இரத்த ஓட்டத்தை மேம்படுத்தும்
-சிறுநீரக செயல்பாட்டை ஆதரிக்கும்
-மரபணு நலத்தை மேம்படுத்தும்
-நீரிழிவு சிக்கல்களைத் தடுக்க உதவும்
-</li>
-        <li>🟢 [Malayalam] രക്തശർക്കര സ്വാഭാവികമായി നിയന്ത്രിക്കുന്നു
-ഇൻസുലിൻ സെൻസിറ്റിവിറ്റി മെച്ചപ്പെടുത്തുന്നു
-ശക്തിയും ഉത്സാഹവും വർദ്ധിപ്പിക്കുന്നു
-പാൻക്രിയാസിന്റെ ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു
-ദൃശ്യത മെച്ചപ്പെടുത്തുന്നു
-പാടില്ലാത്ത തളർച്ച കുറയ്ക്കുന്നു
-മറ്റബോളിക് ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു
-ഇമ്മ്യൂണിറ്റിയെ ശക്തിപ്പെടുത്തുന്നു
-വെയർഡ് താക്കോൽ കുറയ്ക്കുന്നു
-ശതമാനം സുരക്ഷിതമായ ഔഷധം
-ഭക്ഷണവും ജീരണമും നിയന്ത്രിക്കുന്നു
-രക്ത പ്രവാഹം മെച്ചപ്പെടുത്തുന്നു
-കിഡ്‌നി ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു
-മുറിവുകൾ പെട്ടെന്ന് ഭേദമാക്കുന്നു
-നീർവ്യാധി പ്രശ്‌നങ്ങൾ തടയുന്നു
-</li>
-        <!-- Repeat total 15 points per language -->
-      </ul>
-      <button class="add-to-cart" onclick="addToCart('D Care', 2500)">Add to Cart</button>
+  <!-- Banner Images -->
+  <img src="1stimage.png" alt="Banner 1" style="width:100%; height:auto; display:block;">
+  <img src="2ndimage.png" alt="Banner 2" style="width:100%; height:auto; display:block;">
+
+  <!-- Products Section -->
+  <div style="background-image: url('background.jpg'); background-size:cover; padding:20px;">
+    
+    <!-- D CARE -->
+    <div style="background-image:url('dcare-bg.png'); background-size:cover; background-position:center; padding:20px; margin:20px auto; max-width:900px; background-color: rgba(255,255,255,0.8);">
+      <h2 style="text-align:center; font-size:28px;">D CARE - ₹2500</h2>
+      <div style="text-align:center;">
+        <img src="dcare1.png" style="width:80%; max-width:400px;"><br><br>
+        <img src="dcare2.png" style="width:80%; max-width:400px;">
+      </div>
+      <div style="font-size:20px; color:black; padding:10px;">
+        <b>Benefits (English):</b>
+        <ul>
+          <li>Helps regulate blood sugar</li>
+          <li>Improves insulin sensitivity</li>
+          <li>Reduces sugar cravings</li>
+          <li>Boosts pancreas function</li>
+          <li>Rich in anti-diabetic herbs</li>
+          <li>Improves metabolism</li>
+          <li>Detoxifies the body</li>
+          <li>Prevents diabetic complications</li>
+          <li>Boosts energy levels</li>
+          <li>Controls frequent urination</li>
+          <li>Supports eye health</li>
+          <li>Strengthens immunity</li>
+          <li>Protects heart health</li>
+          <li>Promotes better sleep</li>
+          <li>Reduces stress and fatigue</li>
+        </ul>
+        <b>நன்மைகள் (Tamil):</b>
+        <ul>
+          <li>இன்சுலின் அளவை கட்டுப்படுத்துகிறது</li>
+          <li>இரத்த சர்க்கரை அளவை சீராக்குகிறது</li>
+          <li>பசியை கட்டுப்படுத்துகிறது</li>
+          <li>கல்லீரல் சுகத்தை மேம்படுத்துகிறது</li>
+          <li>உடலை டிடாக்ஸ் செய்கிறது</li>
+          <li>உறக்கத்தை மேம்படுத்துகிறது</li>
+          <li>நரம்பு அமைதியை ஏற்படுத்துகிறது</li>
+          <li>மனஅழுத்தத்தை குறைக்கிறது</li>
+          <li>உடல் சக்தியை அதிகரிக்கிறது</li>
+          <li>மூத்திரத்தில் சர்க்கரை பிரச்சனை குறைகிறது</li>
+          <li>கண் பார்வையை பாதுகாக்கிறது</li>
+          <li>உடல் நரம்புகளை உறுதிப்படுத்துகிறது</li>
+          <li>மனநலம் மேம்படும்</li>
+          <li>முதுகு வலியை குறைக்கும்</li>
+          <li>முன்பே நோய்கள் வராமல் தடுக்கும்</li>
+        </ul>
+        <b>ഗുണങ്ങള്‍ (Malayalam):</b>
+        <ul>
+          <li>ബ്ലഡ് ഷുഗർ നിയന്ത്രിക്കുന്നു</li>
+          <li>ഇൻസുലിൻ പ്രതികരണശേഷി കൂട്ടുന്നു</li>
+          <li>ചക്കര അളവ് കുറക്കുന്നു</li>
+          <li>പ്രമേഹ പ്രശ്നങ്ങൾ കുറക്കുന്നു</li>
+          <li>നോയ്‌ക്കുമുമ്പ് പ്രതിരോധം നൽകുന്നു</li>
+          <li>ദഹന സംവിധാനം മെച്ചപ്പെടുത്തുന്നു</li>
+          <li>ഉറക്കം മെച്ചപ്പെടുന്നു</li>
+          <li>ഉത്സാഹം വർദ്ധിപ്പിക്കുന്നു</li>
+          <li>കണ്ണുകളുടെ ആരോഗ്യത്തിന് നല്ലത്</li>
+          <li>ഉടൽവേദന കുറയ്ക്കുന്നു</li>
+          <li>ഹൃദയാരോഗ്യം സംരക്ഷിക്കുന്നു</li>
+          <li>മാനസിക സമ്മർദ്ദം കുറക്കുന്നു</li>
+          <li>ഇമ്യൂണിറ്റി വർദ്ധിപ്പിക്കുന്നു</li>
+          <li>വളരെ പ്രകൃതിദത്തമാണ്</li>
+          <li>ആശ്വാസം നൽകുന്നു</li>
+        </ul>
+      </div>
+      <div style="text-align:center;">
+        <button onclick="addToCart('D CARE', 2500)" style="padding:15px 30px; font-size:20px; background:green; color:white; border:none;">Add to Cart</button>
+      </div>
     </div>
-  </section>
 
-  <!-- Repeat same structure for Bone Care, Nutri Mix, Slim Care, Sky Flax -->
-  <!-- Just change image, name, price, and 15-point content -->
+    <!-- Repeat similar blocks for Bone Care, Nutri Mix, Slim Care, Sky Flax -->
+
+  </div>
 
   <script>
-    function addToCart(name, price) {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existing = cart.find(p => p.name === name);
+    function addToCart(productName, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let existing = cart.find(item => item.name === productName);
       if (existing) {
-        existing.quantity += 1;
+        existing.qty += 1;
       } else {
-        cart.push({ name, price, quantity: 1 });
+        cart.push({ name: productName, price: price, qty: 1 });
       }
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(name + ' added to cart!');
+      alert(productName + " added to cart!");
     }
   </script>
 </body>
