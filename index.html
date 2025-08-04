@@ -1,297 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skyway Health Care</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skyway Health Food</title>
   <style>
     body {
+      background-color: #f5f5f5;
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
       color: black;
     }
 
-    .navbar {
-      background-color: #fff;
+    header {
       text-align: center;
-      padding: 10px;
+      padding: 30px 0 10px;
     }
 
-    .navbar img {
-      max-height: 100px;
+    header img.logo {
+      width: 150px;
     }
 
-    .nav-buttons {
-      margin-top: 10px;
+    .nav {
+      text-align: center;
+      margin: 10px 0;
     }
 
-    .nav-buttons a {
-      background-color: green;
-      color: white;
+    .nav a {
+      display: inline-block;
       padding: 10px 20px;
-      margin: 0 5px;
+      margin: 5px;
+      background-color: #a3e635;
+      color: black;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
-      border-radius: 5px;
     }
 
-    .product-container {
-      background-color: rgba(255, 255, 255, 0.8);
-      margin: 40px auto;
-      max-width: 900px;
+    .main-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .product-box {
+      background-color: rgba(211, 211, 211, 0.5);
+      margin: 30px 10px;
       padding: 20px;
       border-radius: 10px;
     }
 
-    .product-title {
-      font-size: 28px;
-      text-align: center;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .product-images {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .product-images img {
-      width: 300px;
-      height: auto;
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .product-price {
-      font-size: 22px;
-      text-align: center;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-
-    .add-to-cart-btn {
+    .product-box img {
+      width: 100%;
+      max-width: 300px;
       display: block;
       margin: 10px auto;
-      background-color: yellow;
-      color: black;
-      padding: 12px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
     }
 
     .benefits {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-top: 20px;
+      font-size: 1.2rem;
+      margin: 15px 0;
     }
 
-    .benefits h3 {
-      color: #000099;
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0;
     }
 
-    @media (max-width: 768px) {
-      .product-images {
-        flex-direction: column;
-        align-items: center;
-      }
+    .add-to-cart {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      background-color: #facc15;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-      .product-images img {
-        width: 90%;
+    @media (max-width: 600px) {
+      .benefits {
+        font-size: 1.1rem;
       }
-
-      .add-to-cart-btn {
-        width: 80%;
-      }
-
-      .nav-buttons a {
-        display: inline-block;
-        margin: 5px;
-        padding: 10px 15px;
+      .price {
+        font-size: 1.3rem;
       }
     }
   </style>
+  <script>
+    function addToCart(productName) {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const existing = cart.find(item => item.name === productName);
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ name: productName, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(productName + " added to cart!");
+    }
+  </script>
 </head>
 <body>
 
-  <div class="navbar">
-    <img src="logo.png" alt="Skyway Logo">
-    <div class="nav-buttons">
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="nav">
       <a href="index.html">Home</a>
       <a href="cart.html">Cart</a>
-      <a href="#">Meetings</a>
+      <a href="meetings.html">Meetings</a>
     </div>
+  </header>
+
+  <div class="main-banner">
+    <img src="1stimage.png" alt="Main Banner">
   </div>
 
-  <!-- Product Template Start -->
-  <div id="products"></div>
-  <!-- Product Template End -->
+  <!-- Product Start -->
+  <div class="product-box">
+    <img src="dcare.png" alt="D Care Background">
+    <img src="dcare2.png" alt="D Care Product">
 
-  <script>
-    const products = [
-      {
-        name: 'D Care',
-        price: 2500,
-        images: ['dcare1.png', 'dcare2.png'],
-        english: [
-          "Controls blood sugar naturally",
-          "Improves insulin sensitivity",
-          "Boosts energy and vitality",
-          "Supports pancreas health",
-          "Improves vision clarity",
-          "Reduces fatigue in diabetic patients",
-          "Promotes metabolic health",
-          "Enhances immunity",
-          "Reduces thirst & frequent urination",
-          "100% herbal and safe",
-          "Regulates appetite and digestion",
-          "Improves circulation",
-          "Supports kidney function",
-          "Promotes wound healing",
-          "Prevents diabetic complications"
-        ],
-        tamil: [
-          "இன்சுலின் அழுத்தத்தை கட்டுப்படுத்தும்",
-          "சர்க்கரை அளவை சமநிலைப்படுத்தும்",
-          "உடல் சக்தியை உயர்த்தும்",
-          "பித்தக்கோஷ ஆரோக்கியத்தை மேம்படுத்தும்",
-          "கண்ணின் தெளிவை மேம்படுத்தும்",
-          "நீண்ட நேர சோர்வை குறைக்கும்",
-          "மெட்டபாலிசத்தை மேம்படுத்தும்",
-          "நீரிழிவு நோயாளிகளுக்குப் பாதுகாப்பு",
-          "நாக்கு உலர்வையும் சிறுநீரை அதிகம் கழிப்பதும் குறைக்கும்",
-          "மூலிகை தயாரிப்பு",
-          "உணவு மற்றும் ஜீரணத்தை ஒழுங்குபடுத்தும்",
-          "இரத்த ஓட்டத்தை மேம்படுத்தும்",
-          "சிறுநீரக செயல்பாட்டை ஆதரிக்கும்",
-          "மரபணு நலத்தை மேம்படுத்தும்",
-          "நீரிழிவு சிக்கல்களைத் தடுக்க உதவும்"
-        ],
-        malayalam: [
-          "രക്തശർക്കര സ്വാഭാവികമായി നിയന്ത്രിക്കുന്നു",
-          "ഇൻസുലിൻ സെൻസിറ്റിവിറ്റി മെച്ചപ്പെടുത്തുന്നു",
-          "ശക്തിയും ഉത്സാഹവും വർദ്ധിപ്പിക്കുന്നു",
-          "പാൻക്രിയാസിന്റെ ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു",
-          "ദൃശ്യത മെച്ചപ്പെടുത്തുന്നു",
-          "പാടില്ലാത്ത തളർച്ച കുറയ്ക്കുന്നു",
-          "മറ്റബോളിക് ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു",
-          "ഇമ്മ്യൂണിറ്റിയെ ശക്തിപ്പെടുത്തുന്നു",
-          "വെയർഡ് താക്കോൽ കുറയ്ക്കുന്നു",
-          "ശതമാനം സുരക്ഷിതമായ ഔഷധം",
-          "ഭക്ഷണവും ജീരണമും നിയന്ത്രിക്കുന്നു",
-          "രക്ത പ്രവാഹം മെച്ചപ്പെടുത്തുന്നു",
-          "കിഡ്‌നി ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു",
-          "മുറിവുകൾ പെട്ടെന്ന് ഭേദമാക്കുന്നു",
-          "നീർവ്യാധി പ്രശ്‌നങ്ങൾ തടയുന്നു"
-        ]
-      },
+    <div class="benefits">
+      <strong>English Benefits:</strong><br>
+      1. Controls Diabetes<br>
+      2. Increases insulin function<br>
+      3. Improves pancreas health<br>
+      4. Detoxifies blood<br>
+      5. Boosts immunity<br>
+      6. Reduces fatigue<br>
+      7. Improves digestion<br>
+      8. Lowers sugar levels<br>
+      9. Prevents nerve damage<br>
+      10. Reduces frequent urination<br>
+      11. Improves sleep<br>
+      12. Regulates metabolism<br>
+      13. Reduces thirst<br>
+      14. Natural sugar controller<br>
+      15. No side effects
+    </div>
 
-      {
-        name: 'Bone Care',
-        price: 2000,
-        images: ['bone1.png', 'bone2.png'],
-        english: [
-          "Strengthens bones",
-          "Improves calcium absorption",
-          "Supports joint flexibility",
-          "Reduces joint pain",
-          "Improves bone density",
-          "Prevents osteoporosis",
-          "Promotes cartilage health",
-          "Boosts stamina",
-          "Improves mobility",
-          "Supports muscle function",
-          "100% herbal ingredients",
-          "Reduces risk of fractures",
-          "Improves posture",
-          "Maintains bone strength with age",
-          "Enhances physical performance"
-        ],
-        tamil: [
-          "எலும்புகளின் வலிமையை அதிகரிக்கும்",
-          "கேல்சியம் உறிஞ்சலை மேம்படுத்தும்",
-          "கூட்டு நெகிழ்வை ஆதரிக்கும்",
-          "வலி குறைக்கும்",
-          "எலும்பு அடர்த்தியை மேம்படுத்தும்",
-          "ஒஸ்டியோபரோசிஸ் தடுக்கும்",
-          "உடலின் தசை செயல்பாட்டை மேம்படுத்தும்",
-          "மூலிகை கலவைகள்",
-          "வலிமை மற்றும் உறுதி தரும்",
-          "வயதானபின்பும் எலும்பு ஆரோக்கியம் பாதுகாக்கும்",
-          "முழு இயக்கத்தையும் மேம்படுத்தும்",
-          "தசை செயல்பாட்டுக்கு ஆதரவு",
-          "வலிமையான கட்டமைப்பு தரும்",
-          "உடல் நிலைப்பாட்டை மேம்படுத்தும்",
-          "தசை வலிமையை அதிகரிக்கும்"
-        ],
-        malayalam: [
-          "എലുമ്പുകളുടെ ശക്തി വർദ്ധിപ്പിക്കുന്നു",
-          "കാൽസ്യം ആഗിരണം മെച്ചപ്പെടുത്തുന്നു",
-          "സന്ധിവാതം കുറയ്ക്കുന്നു",
-          "എലുപ്പ് രോഗങ്ങൾ തടയുന്നു",
-          "മാംസപേശി പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു",
-          "100% ഹേർബൽ ഉൽപ്പന്നം",
-          "മുട്ടുവേദന കുറയ്ക്കുന്നു",
-          "ഓസ്റ്റിയോപ്പൊറോസിസ് തടയുന്നു",
-          "ചലനം മെച്ചപ്പെടുത്തുന്നു",
-          "വളരെയധികം ഊർജം നൽകുന്നു",
-          "സന്ധി ആരോഗ്യത്തിന് നല്ലത്",
-          "മുടിവേറെങ്കിലും തടയുന്നു",
-          "പോഷൻ മെച്ചപ്പെടുത്തുന്നു",
-          "ദൈനംദിന പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു",
-          "ശാരീരിക പ്രകടനം മെച്ചപ്പെടുത്തുന്നു"
-        ]
-      }
-      // Repeat for Slim Care, Nutri Mix, Sky Flax...
-    ];
+    <div class="benefits">
+      <strong>தமிழ் பயன்கள்:</strong><br>
+      1. நீரிழிவு கட்டுப்பாடு<br>
+      2. இன்சுலின் செயல்பாடு அதிகரிப்பு<br>
+      3. கணைய சுகாதாரம்<br>
+      4. இரத்த சுத்திகரிப்பு<br>
+      5. நோயெதிர்ப்பு சக்தி<br>
+      6. சோர்வு குறைப்பு<br>
+      7. ஜீரணம் மேம்பாடு<br>
+      8. சர்க்கரை அளவு குறைப்பு<br>
+      9. நரம்பியல் சேதம் தடுப்பு<br>
+      10. மூச்சுவிடும் எண்ணிக்கை குறைப்பு<br>
+      11. நன்கு தூக்கம்<br>
+      12. உடல் இயக்கங்களை ஒழுங்குபடுத்தும்<br>
+      13. தாகம் குறைப்பு<br>
+      14. இயற்கையான மருத்துவம்<br>
+      15. பக்கவிளைவுகள் இல்லை
+    </div>
 
-    const productsContainer = document.getElementById('products');
-    products.forEach(p => {
-      const div = document.createElement('div');
-      div.className = 'product-container';
-      div.innerHTML = `
-        <div class="product-title">${p.name}</div>
-        <div class="product-images">
-          <img src="${p.images[0]}" alt="${p.name} Image 1">
-          <img src="${p.images[1]}" alt="${p.name} Image 2">
-        </div>
-        <div class="product-price">₹${p.price}</div>
-        <button class="add-to-cart-btn" onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
-        <div class="benefits">
-          <h3>Benefits (English):</h3>
-          <ul>${p.english.map(b => `<li>${b}</li>`).join('')}</ul>
-          <h3>பயன்கள் (Tamil):</h3>
-          <ul>${p.tamil.map(b => `<li>${b}</li>`).join('')}</ul>
-          <h3>ലാഭങ്ങൾ (Malayalam):</h3>
-          <ul>${p.malayalam.map(b => `<li>${b}</li>`).join('')}</ul>
-        </div>
-      `;
-      productsContainer.appendChild(div);
-    });
+    <div class="benefits">
+      <strong>മലയാളം ഗുണങ്ങൾ:</strong><br>
+      1. പ്രമേഹ നിയന്ത്രണം<br>
+      2. ഇൻസുലിൻ ക്രിയ പ്രവർത്തനം<br>
+      3. അഗ്നാശയാരോഗ്യം<br>
+      4. രക്തശുദ്ധീകരണം<br>
+      5. പ്രതിരോധശേഷി വർദ്ധിപ്പിക്കുന്നു<br>
+      6. ക്ഷീണം കുറയ്ക്കുന്നു<br>
+      7. ജീരണം മെച്ചപ്പെടുത്തുന്നു<br>
+      8. ചക്കര നില കുറയ്ക്കുന്നു<br>
+      9. നാഡീസംബന്ധമായ പ്രശ്നങ്ങൾ തടയുന്നു<br>
+      10. മൂത്രം കുറയ്ക്കുന്നു<br>
+      11. നന്നായി ഉറക്കം നൽകുന്നു<br>
+      12. ദഹനസംവിധാനം ശരിയാക്കുന്നു<br>
+      13. ദാഹം കുറയ്ക്കുന്നു<br>
+      14. പ്രകൃതിദത്ത ഔഷധം<br>
+      15. പാർശ്വഫലങ്ങളില്ല
+    </div>
 
-    function addToCart(name, price) {
-      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-      const existing = cart.find(item => item.name === name);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert("Added to Cart");
-    }
-  </script>
+    <div class="price">₹2500</div>
+    <button class="add-to-cart" onclick="addToCart('D Care')">Add to Cart</button>
+  </div>
+  <!-- Product End -->
+
+  <!-- Repeat same structure for Slim Care, Nutri Mix, Bone Care, Skyflax -->
+  <!-- Just replace the image names, product names, prices, and benefits -->
 
 </body>
 </html>
+
 
 
