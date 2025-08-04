@@ -3,165 +3,295 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skyway Health Food</title>
+  <title>Skyway Health Care</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-image: url('background.jpg');
       background-size: cover;
+      background-attachment: fixed;
       background-position: center;
       color: black;
     }
-    header {
+
+    .navbar {
+      background-color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 10px;
     }
-    header img {
-      width: 200px;
-      height: auto;
+
+    .navbar img {
+      max-height: 100px;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
+
+    .nav-buttons {
+      margin-top: 10px;
     }
-    nav a {
+
+    .nav-buttons a {
       background-color: green;
       color: white;
       padding: 10px 20px;
+      margin: 0 5px;
       text-decoration: none;
+      font-weight: bold;
       border-radius: 5px;
-      font-size: 20px;
     }
-    .product-box {
-      background-color: rgba(211, 211, 211, 0.7);
-      margin: 30px auto;
-      padding: 20px;
+
+    .product-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 40px auto;
       max-width: 900px;
+      padding: 20px;
       border-radius: 10px;
     }
-    .product-images {
+
+    .product-title {
+      font-size: 28px;
       text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
+
+    .product-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
     .product-images img {
       width: 300px;
       height: auto;
-      margin: 10px;
+      max-width: 100%;
+      border-radius: 10px;
     }
-    .benefits {
-      font-size: 18px;
-      margin-top: 20px;
-      line-height: 1.6;
-    }
-    .price {
+
+    .product-price {
       font-size: 22px;
+      text-align: center;
+      margin: 15px 0;
       font-weight: bold;
-      margin-top: 10px;
     }
-    .add-to-cart {
+
+    .add-to-cart-btn {
       display: block;
+      margin: 10px auto;
       background-color: yellow;
       color: black;
-      font-size: 20px;
-      padding: 12px;
+      padding: 12px 30px;
+      font-size: 18px;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      width: 100%;
-      margin-top: 15px;
+    }
+
+    .benefits {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .benefits h3 {
+      color: #000099;
+    }
+
+    @media (max-width: 768px) {
+      .product-images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-images img {
+        width: 90%;
+      }
+
+      .add-to-cart-btn {
+        width: 80%;
+      }
+
+      .nav-buttons a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Skyway Logo" />
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cart.html">Cart</a>
-    <a href="meetings.html">Meetings</a>
-  </nav>
 
-  <!-- D Care -->
-  <div class="product-box">
-    <div class="product-images">
-      <img src="dcare1.jpg" alt="D Care 1" />
-      <img src="dcare2.jpg" alt="D Care 2" />
+  <div class="navbar">
+    <img src="logo.png" alt="Skyway Logo">
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="#">Meetings</a>
     </div>
-    <div class="benefits">
-      <strong>English:</strong><br>
-      1. Regulates blood sugar levels.<br>
-      2. Boosts insulin sensitivity.<br>
-      3. Reduces fatigue.<br>
-      4. Enhances metabolism.<br>
-      5. Helps manage weight.<br>
-      6. Supports immune system.<br>
-      7. Reduces sugar cravings.<br>
-      8. Maintains healthy cholesterol.<br>
-      9. Prevents diabetic complications.<br>
-      10. Improves digestion.<br>
-      11. Controls inflammation.<br>
-      12. Promotes pancreatic health.<br>
-      13. Rich in antioxidants.<br>
-      14. Natural herbal ingredients.<br>
-      15. Safe for long-term use.<br><br>
-
-      <strong>Tamil:</strong><br>
-      1. இரத்த சர்க்கரையை கட்டுப்படுத்துகிறது.<br>
-      2. இன்சுலின் செறிவை அதிகரிக்கிறது.<br>
-      3. சோர்வை குறைக்கிறது.<br>
-      4. மெட்டபொலிசத்தை மேம்படுத்துகிறது.<br>
-      5. எடை மேலாண்மைக்கு உதவுகிறது.<br>
-      6. நோய் எதிர்ப்பு சக்தியை ஆதரிக்கிறது.<br>
-      7. சர்க்கரை விருப்பத்தை குறைக்கிறது.<br>
-      8. நல்ல கொலஸ்ட்ராலை பராமரிக்கிறது.<br>
-      9. நீரிழிவு சிக்கல்களை தடுக்கும்.<br>
-      10. ஜீரணத்தை மேம்படுத்துகிறது.<br>
-      11. அழற்சி கட்டுப்படுத்துகிறது.<br>
-      12. அகச்சிவப்புக்குழாயின் ஆரோக்கியம்.<br>
-      13. ஆண்டிஆக்ஸிடன்ட்கள் அதிகம்.<br>
-      14. இயற்கையான மூலிகை பொருட்கள்.<br>
-      15. நீண்ட காலம் பாதுகாப்பானது.<br><br>
-
-      <strong>Malayalam:</strong><br>
-      1. രക്തത്തിലെ പഞ്ചസാര നിയന്ത്രിക്കുന്നു.<br>
-      2. ഇൻസുലിൻ സെൻസിറ്റിവിറ്റി വർദ്ധിപ്പിക്കുന്നു.<br>
-      3. തളർച്ച കുറയ്ക്കുന്നു.<br>
-      4. മെറ്റബോളിസം മെച്ചപ്പെടുത്തുന്നു.<br>
-      5. തൂക്കം നിയന്ത്രിക്കാൻ സഹായിക്കുന്നു.<br>
-      6. പ്രതിരോധശക്തി ശക്തമാക്കുന്നു.<br>
-      7. പഞ്ചസാര ആഗ്രഹം കുറയ്ക്കുന്നു.<br>
-      8. കൊളസ്റ്റ്രോൾ നില മാനദണ്ഡത്തിൽ.<br>
-      9. പ്രമേഹസംബന്ധമായ തകരാറുകൾ തടയുന്നു.<br>
-      10. ജീരണം മെച്ചപ്പെടുത്തുന്നു.<br>
-      11. അണുബാധ കുറയ്ക്കുന്നു.<br>
-      12. അഗ്നാശയ ആരോഗ്യത്തിനായി.<br>
-      13. ആന്റിഒക്സിഡന്റുകൾ സമൃദ്ധം.<br>
-      14. പ്രകൃതിദത്ത ചെടിമരുന്നുകൾ.<br>
-      15. ദീർഘകാല ഉപയോഗത്തിന് സുരക്ഷിതം.<br>
-    </div>
-    <div class="price">Price: ₹2500</div>
-    <button class="add-to-cart" onclick="addToCart('D Care', 2500)">Add to Cart</button>
   </div>
 
-  <!-- Repeat similar blocks for Slim Care, Nutri Mix, Bone Care with correct image names and content -->
-  <!-- I will send those next if this part works perfectly -->
+  <!-- Product Template Start -->
+  <div id="products"></div>
+  <!-- Product Template End -->
 
   <script>
+    const products = [
+      {
+        name: 'D Care',
+        price: 2500,
+        images: ['dcare1.png', 'dcare2.png'],
+        english: [
+          "Controls blood sugar naturally",
+          "Improves insulin sensitivity",
+          "Boosts energy and vitality",
+          "Supports pancreas health",
+          "Improves vision clarity",
+          "Reduces fatigue in diabetic patients",
+          "Promotes metabolic health",
+          "Enhances immunity",
+          "Reduces thirst & frequent urination",
+          "100% herbal and safe",
+          "Regulates appetite and digestion",
+          "Improves circulation",
+          "Supports kidney function",
+          "Promotes wound healing",
+          "Prevents diabetic complications"
+        ],
+        tamil: [
+          "இன்சுலின் அழுத்தத்தை கட்டுப்படுத்தும்",
+          "சர்க்கரை அளவை சமநிலைப்படுத்தும்",
+          "உடல் சக்தியை உயர்த்தும்",
+          "பித்தக்கோஷ ஆரோக்கியத்தை மேம்படுத்தும்",
+          "கண்ணின் தெளிவை மேம்படுத்தும்",
+          "நீண்ட நேர சோர்வை குறைக்கும்",
+          "மெட்டபாலிசத்தை மேம்படுத்தும்",
+          "நீரிழிவு நோயாளிகளுக்குப் பாதுகாப்பு",
+          "நாக்கு உலர்வையும் சிறுநீரை அதிகம் கழிப்பதும் குறைக்கும்",
+          "மூலிகை தயாரிப்பு",
+          "உணவு மற்றும் ஜீரணத்தை ஒழுங்குபடுத்தும்",
+          "இரத்த ஓட்டத்தை மேம்படுத்தும்",
+          "சிறுநீரக செயல்பாட்டை ஆதரிக்கும்",
+          "மரபணு நலத்தை மேம்படுத்தும்",
+          "நீரிழிவு சிக்கல்களைத் தடுக்க உதவும்"
+        ],
+        malayalam: [
+          "രക്തശർക്കര സ്വാഭാവികമായി നിയന്ത്രിക്കുന്നു",
+          "ഇൻസുലിൻ സെൻസിറ്റിവിറ്റി മെച്ചപ്പെടുത്തുന്നു",
+          "ശക്തിയും ഉത്സാഹവും വർദ്ധിപ്പിക്കുന്നു",
+          "പാൻക്രിയാസിന്റെ ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു",
+          "ദൃശ്യത മെച്ചപ്പെടുത്തുന്നു",
+          "പാടില്ലാത്ത തളർച്ച കുറയ്ക്കുന്നു",
+          "മറ്റബോളിക് ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു",
+          "ഇമ്മ്യൂണിറ്റിയെ ശക്തിപ്പെടുത്തുന്നു",
+          "വെയർഡ് താക്കോൽ കുറയ്ക്കുന്നു",
+          "ശതമാനം സുരക്ഷിതമായ ഔഷധം",
+          "ഭക്ഷണവും ജീരണമും നിയന്ത്രിക്കുന്നു",
+          "രക്ത പ്രവാഹം മെച്ചപ്പെടുത്തുന്നു",
+          "കിഡ്‌നി ആരോഗ്യം മെച്ചപ്പെടുത്തുന്നു",
+          "മുറിവുകൾ പെട്ടെന്ന് ഭേദമാക്കുന്നു",
+          "നീർവ്യാധി പ്രശ്‌നങ്ങൾ തടയുന്നു"
+        ]
+      },
+
+      {
+        name: 'Bone Care',
+        price: 2000,
+        images: ['bone1.png', 'bone2.png'],
+        english: [
+          "Strengthens bones",
+          "Improves calcium absorption",
+          "Supports joint flexibility",
+          "Reduces joint pain",
+          "Improves bone density",
+          "Prevents osteoporosis",
+          "Promotes cartilage health",
+          "Boosts stamina",
+          "Improves mobility",
+          "Supports muscle function",
+          "100% herbal ingredients",
+          "Reduces risk of fractures",
+          "Improves posture",
+          "Maintains bone strength with age",
+          "Enhances physical performance"
+        ],
+        tamil: [
+          "எலும்புகளின் வலிமையை அதிகரிக்கும்",
+          "கேல்சியம் உறிஞ்சலை மேம்படுத்தும்",
+          "கூட்டு நெகிழ்வை ஆதரிக்கும்",
+          "வலி குறைக்கும்",
+          "எலும்பு அடர்த்தியை மேம்படுத்தும்",
+          "ஒஸ்டியோபரோசிஸ் தடுக்கும்",
+          "உடலின் தசை செயல்பாட்டை மேம்படுத்தும்",
+          "மூலிகை கலவைகள்",
+          "வலிமை மற்றும் உறுதி தரும்",
+          "வயதானபின்பும் எலும்பு ஆரோக்கியம் பாதுகாக்கும்",
+          "முழு இயக்கத்தையும் மேம்படுத்தும்",
+          "தசை செயல்பாட்டுக்கு ஆதரவு",
+          "வலிமையான கட்டமைப்பு தரும்",
+          "உடல் நிலைப்பாட்டை மேம்படுத்தும்",
+          "தசை வலிமையை அதிகரிக்கும்"
+        ],
+        malayalam: [
+          "എലുമ്പുകളുടെ ശക്തി വർദ്ധിപ്പിക്കുന്നു",
+          "കാൽസ്യം ആഗിരണം മെച്ചപ്പെടുത്തുന്നു",
+          "സന്ധിവാതം കുറയ്ക്കുന്നു",
+          "എലുപ്പ് രോഗങ്ങൾ തടയുന്നു",
+          "മാംസപേശി പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു",
+          "100% ഹേർബൽ ഉൽപ്പന്നം",
+          "മുട്ടുവേദന കുറയ്ക്കുന്നു",
+          "ഓസ്റ്റിയോപ്പൊറോസിസ് തടയുന്നു",
+          "ചലനം മെച്ചപ്പെടുത്തുന്നു",
+          "വളരെയധികം ഊർജം നൽകുന്നു",
+          "സന്ധി ആരോഗ്യത്തിന് നല്ലത്",
+          "മുടിവേറെങ്കിലും തടയുന്നു",
+          "പോഷൻ മെച്ചപ്പെടുത്തുന്നു",
+          "ദൈനംദിന പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു",
+          "ശാരീരിക പ്രകടനം മെച്ചപ്പെടുത്തുന്നു"
+        ]
+      }
+      // Repeat for Slim Care, Nutri Mix, Sky Flax...
+    ];
+
+    const productsContainer = document.getElementById('products');
+    products.forEach(p => {
+      const div = document.createElement('div');
+      div.className = 'product-container';
+      div.innerHTML = `
+        <div class="product-title">${p.name}</div>
+        <div class="product-images">
+          <img src="${p.images[0]}" alt="${p.name} Image 1">
+          <img src="${p.images[1]}" alt="${p.name} Image 2">
+        </div>
+        <div class="product-price">₹${p.price}</div>
+        <button class="add-to-cart-btn" onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
+        <div class="benefits">
+          <h3>Benefits (English):</h3>
+          <ul>${p.english.map(b => `<li>${b}</li>`).join('')}</ul>
+          <h3>பயன்கள் (Tamil):</h3>
+          <ul>${p.tamil.map(b => `<li>${b}</li>`).join('')}</ul>
+          <h3>ലാഭങ്ങൾ (Malayalam):</h3>
+          <ul>${p.malayalam.map(b => `<li>${b}</li>`).join('')}</ul>
+        </div>
+      `;
+      productsContainer.appendChild(div);
+    });
+
     function addToCart(name, price) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const index = cart.findIndex(item => item.name === name);
-      if (index > -1) {
-        cart[index].quantity += 1;
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
       } else {
-        cart.push({ name, price, quantity: 1 });
+        cart.push({ name, price, qty: 1 });
       }
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(name + ' added to cart!');
+      alert("Added to Cart");
     }
   </script>
+
 </body>
 </html>
+
 
