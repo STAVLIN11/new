@@ -2,169 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skyway Health Food</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="container">
-      <h1 class="logo">Skyway Health Food</h1>
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Cart</a>
-        <a href="#">Meeting</a>
-      </nav>
+  <nav class="navbar">
+    <h1>Skyway Health Food</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart 🛒</a>
     </div>
-  </header>
+  </nav>
 
-  <!-- VIDEO SECTION -->
   <section class="video-section">
-    <div class="container">
-      <video src="videos/video1.mp4" controls></video>
-      <video src="videos/video2.mp4" controls></video>
-    </div>
+    <video src="video1.mp4" controls></video>
   </section>
 
-  <!-- PRODUCTS SECTION -->
-  <section class="products-section">
-    <div class="container">
-      <!-- Product Template -->
-      <div class="product">
-        <img src="images/dcare-main.png" alt="D Care" />
-        <div class="details">
-          <h2>D Care - ₹2500</h2>
-          <ul>
-            <li>Supports healthy sugar metabolism.</li>
-            <li>Enhances energy and vitality.</li>
-            <li>Improves pancreatic health.</li>
-            <li>Reduces frequent urination.</li>
-            <li>Boosts insulin sensitivity naturally.</li>
-            <li>Rich in herbal extracts.</li>
-            <li>Safe for daily consumption.</li>
-            <li>Promotes better sleep patterns.</li>
-            <li>Improves vision clarity.</li>
-            <li>Reduces sugar cravings.</li>
-            <li>Helps control glucose spikes.</li>
-            <li>Improves blood circulation.</li>
-            <li>Reduces fatigue & tiredness.</li>
-            <li>Balances cholesterol levels.</li>
-            <li>Overall diabetic support.</li>
-          </ul>
-          <button onclick="addToCart('D Care', 2500)">Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- Repeat for other products... -->
-      <!-- BONE CARE -->
-      <div class="product">
-        <img src="images/bonecare.png" alt="Bone Care" />
-        <div class="details">
-          <h2>Bone Care - ₹2000</h2>
-          <ul>
-            <li>Strengthens bones naturally.</li>
-            <li>Helps prevent osteoporosis.</li>
-            <li>Increases calcium absorption.</li>
-            <li>Relieves joint pain and stiffness.</li>
-            <li>Supports spinal health.</li>
-            <li>Boosts mobility in aging adults.</li>
-            <li>Ideal for knee/back issues.</li>
-            <li>Contains Ayurvedic herbs.</li>
-            <li>No side effects.</li>
-            <li>Improves bone density.</li>
-            <li>Reduces inflammation.</li>
-            <li>Helps in post-fracture recovery.</li>
-            <li>Improves flexibility.</li>
-            <li>Supports cartilage health.</li>
-            <li>Recommended for all age groups.</li>
-          </ul>
-          <button onclick="addToCart('Bone Care', 2000)">Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- SLIM CARE -->
-      <div class="product">
-        <img src="images/slimcare.png" alt="Slim Care" />
-        <div class="details">
-          <h2>Slim Care - ₹2000</h2>
-          <ul>
-            <li>Supports natural fat burn.</li>
-            <li>Boosts metabolism.</li>
-            <li>Reduces bloating.</li>
-            <li>Improves digestion.</li>
-            <li>Suppresses unhealthy appetite.</li>
-            <li>Detoxifies the body.</li>
-            <li>Reduces belly fat.</li>
-            <li>Enhances energy levels.</li>
-            <li>Tones body shape.</li>
-            <li>Herbal formulation.</li>
-            <li>No crash dieting needed.</li>
-            <li>Increases confidence.</li>
-            <li>Safe for long-term use.</li>
-            <li>Improves hormonal balance.</li>
-            <li>Results within weeks.</li>
-          </ul>
-          <button onclick="addToCart('Slim Care', 2000)">Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- NUTRI MIX -->
-      <div class="product">
-        <img src="images/nutrimix.png" alt="Nutri Mix" />
-        <div class="details">
-          <h2>Nutri Mix - ₹2000</h2>
-          <ul>
-            <li>Complete daily nutrition.</li>
-            <li>High protein & vitamins.</li>
-            <li>Boosts immunity.</li>
-            <li>Supports weight gain.</li>
-            <li>Good for all age groups.</li>
-            <li>Improves digestion.</li>
-            <li>Increases energy levels.</li>
-            <li>Reduces tiredness.</li>
-            <li>Strengthens muscles.</li>
-            <li>Rich in natural nutrients.</li>
-            <li>No artificial additives.</li>
-            <li>Recommended for kids too.</li>
-            <li>Balances diet deficiencies.</li>
-            <li>Easy to digest.</li>
-            <li>Daily health booster.</li>
-          </ul>
-          <button onclick="addToCart('Nutri Mix', 2000)">Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- SKY FLAX -->
-      <div class="product">
-        <img src="images/skyflax.png" alt="Sky Flax" />
-        <div class="details">
-          <h2>Sky Flax - ₹2000</h2>
-          <ul>
-            <li>Rich in omega-3 fatty acids.</li>
-            <li>Improves heart health.</li>
-            <li>Reduces cholesterol levels.</li>
-            <li>Good for skin & hair.</li>
-            <li>Supports hormonal balance.</li>
-            <li>Improves digestion.</li>
-            <li>Helps with weight control.</li>
-            <li>Reduces inflammation.</li>
-            <li>Good source of fiber.</li>
-            <li>Improves brain function.</li>
-            <li>Strengthens immunity.</li>
-            <li>Protects against cancer risks.</li>
-            <li>Balances blood sugar levels.</li>
-            <li>Gluten-free & vegan.</li>
-            <li>Natural detoxifier.</li>
-          </ul>
-          <button onclick="addToCart('Sky Flax', 2000)">Add to Cart</button>
-        </div>
-      </div>
-
+  <section class="products">
+    <div class="product">
+      <img src="dcare.jpg" alt="D Care" />
+      <h2>D Care – ₹2500</h2>
+      <ul>
+        <li>🌿 Controls sugar naturally</li>
+        <li>💪 Boosts insulin production</li>
+        <li>🌱 No chemicals, 100% natural</li>
+        <li>🌾 Improves digestion</li>
+        <li>🛡 Strengthens immunity</li>
+        <li>💓 Supports heart health</li>
+        <li>🧠 Enhances mental clarity</li>
+        <li>💥 Gives energy all day</li>
+        <li>🩺 Promotes blood purification</li>
+        <li>🧬 Balances hormones</li>
+        <li>✅ Lowers bad cholesterol</li>
+        <li>🍀 Detoxifies liver</li>
+        <li>🦴 Strengthens bones</li>
+        <li>🇮🇳 இந்தியர்களுக்கான சிறந்த தயாரிப்பு</li>
+        <li>🌾 മലയാളികൾക്കും பாதுகாப்பുള്ള ഉൽപ്പന്നം</li>
+      </ul>
+      <button onclick="addToCart('D Care', 2500, 'dcare.jpg')">Add to Cart</button>
     </div>
+
+    <!-- Repeat for other products -->
+    <div class="product">
+      <img src="slimcare.jpg" alt="Slim Care" />
+      <h2>Slim Care – ₹2000</h2>
+      <ul>
+        <li>🔥 Burns belly fat</li>
+        <li>💃 Boosts metabolism</li>
+        <li>🥗 Suppresses appetite</li>
+        <li>💧 Reduces water retention</li>
+        <li>🌿 Detoxifies body</li>
+        <li>🩺 Safe for long-term use</li>
+        <li>⚖ Balances hormones</li>
+        <li>⚡ Increases energy</li>
+        <li>🧘‍♀ Improves mood & sleep</li>
+        <li>🍃 100% herbal</li>
+        <li>❌ No side effects</li>
+        <li>🇮🇳 இந்திய பெண்களுக்கு சிறந்த தேர்வு</li>
+        <li>🌾 മലയാളത്തിൽ നൂതന പരിഹാരങ്ങൾ</li>
+      </ul>
+      <button onclick="addToCart('Slim Care', 2000, 'slimcare.jpg')">Add to Cart</button>
+    </div>
+    <!-- Add Nutri Mix, Bone Care, Sky Flax similarly -->
   </section>
+
+  <section class="video-section">
+    <video src="video2.mp4" controls></video>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
