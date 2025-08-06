@@ -4,217 +4,167 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skyway Health Food</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: black;
-    }
-
-    nav {
-      background-color: #e1f5c4;
-      text-align: center;
-      padding: 15px 10px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      margin: 10px;
-      font-size: 20px;
-      background-color: #8bc34a;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-    }
-
-    .logo {
-      width: 120px;
-      margin: 20px auto;
-      display: block;
-    }
-
-    .banner, .meeting-banner {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      display: block;
-    }
-
-    .product-section {
-      padding: 60px 20px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 2px 2px 5px black;
-    }
-
-    .product-content {
-      background-color: rgba(255,255,255,0.85);
-      color: black;
-      border-radius: 15px;
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .product-content h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .product-content p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 10px 0;
-    }
-
-    .price {
-      font-size: 22px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-
-    .add-to-cart {
-      padding: 15px 30px;
-      background-color: #ffeb3b;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 768px) {
-      nav a {
-        display: block;
-        margin: 10px auto;
-        font-size: 18px;
-      }
-
-      .product-content h2 {
-        font-size: 24px;
-      }
-
-      .product-content p {
-        font-size: 16px;
-      }
-
-      .add-to-cart {
-        font-size: 16px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <img src="logo.png" alt="Logo" class="logo" />
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cart.html">Cart</a>
-    <a href="#meeting">Meeting</a>
-  </nav>
-
-  <img src="1stimage.png" class="banner" alt="Main Banner" />
-  <img src="2ndimage.png" class="meeting-banner" alt="Meeting Banner" id="meeting" />
-
-  <!-- D Care Section -->
-  <section class="product-section" style="background: url('dcare-bg.png') no-repeat center center/cover;">
-  <div class="product-container">
-    <img src="dcare-main.png""dcare-bg.png" alt="D Care" class="product-image">
-    <div class="product-details">
-      <h2>D CARE - ₹2500</h2>
-      <p>
-        1. Blood sugar control through natural ingredients.<br>
-        2. Supports pancreas function for insulin secretion.<br>
-        3. Reduces sugar cravings and stabilizes energy levels.<br>
-        4. Maintains healthy glucose metabolism.<br>
-        5. Improves blood circulation and cell regeneration.<br>
-        6. Fortifies liver and kidney function.<br>
-        7. Protects nerves from diabetes-related damage.<br>
-        8. Strengthens immune response for healing.<br>
-        9. Keeps the body active and stress-free.<br>
-        10. Regulates carbohydrate conversion.<br>
-        11. Suitable for pre-diabetic and diabetic conditions.<br>
-        12. 100% herbal with no side effects.<br>
-        13. Increases insulin sensitivity naturally.<br>
-        14. Reduces inflammation and oxidative stress.<br>
-        15. Promotes holistic diabetic wellness.
-      </p>
-      <button onclick="addToCart('D Care', 2500)">Add to Cart</button>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">Skyway Health Food</h1>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Cart</a>
+        <a href="#">Meeting</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-         <br>
-         ✅ நீரிழிவு கட்டுப்படுத்த உதவுகிறது.<br>
-         ✅ உடலின் சக்தியை அதிகரிக்கிறது.<br>
-         ✅ இயற்கையான மூலிகைகளால் தயாரிப்பு.<br>
-         ✅ நீண்ட நாள் பயன்பாட்டிற்கு பாதுகாப்பானது.<br>
-         ✅ உடல் எடையை கட்டுப்படுத்த உதவுகிறது.<br>
-         <br>
-         🌿 Diabetes கட்டுப்பாடுக்கான நம்பகமான தீர்வு.</p>
-      <div class="price">Price: ₹2500</div>
-      <button class="add-to-cart" onclick="addToCart('D Care', 2500)">Add to Cart</button>
+  <!-- VIDEO SECTION -->
+  <section class="video-section">
+    <div class="container">
+      <video src="videos/video1.mp4" controls></video>
+      <video src="videos/video2.mp4" controls></video>
     </div>
-  </div>
+  </section>
 
-  <!-- Repeat below for other products -->
+  <!-- PRODUCTS SECTION -->
+  <section class="products-section">
+    <div class="container">
+      <!-- Product Template -->
+      <div class="product">
+        <img src="images/dcare-main.png" alt="D Care" />
+        <div class="details">
+          <h2>D Care - ₹2500</h2>
+          <ul>
+            <li>Supports healthy sugar metabolism.</li>
+            <li>Enhances energy and vitality.</li>
+            <li>Improves pancreatic health.</li>
+            <li>Reduces frequent urination.</li>
+            <li>Boosts insulin sensitivity naturally.</li>
+            <li>Rich in herbal extracts.</li>
+            <li>Safe for daily consumption.</li>
+            <li>Promotes better sleep patterns.</li>
+            <li>Improves vision clarity.</li>
+            <li>Reduces sugar cravings.</li>
+            <li>Helps control glucose spikes.</li>
+            <li>Improves blood circulation.</li>
+            <li>Reduces fatigue & tiredness.</li>
+            <li>Balances cholesterol levels.</li>
+            <li>Overall diabetic support.</li>
+          </ul>
+          <button onclick="addToCart('D Care', 2500)">Add to Cart</button>
+        </div>
+      </div>
 
-  <!-- Bone Care Section -->
-  <div class="product-section" style="background-image: url('bonecare1.png');">
-    <div class="product-content">
-      <h2>Bone Care</h2>
-      <p>1. Strengthens bones and joints.<br>
-         2. Improves calcium absorption.<br>
-         3. Reduces joint pain and stiffness.<br>
-         4. Prevents osteoporosis.<br>
-         5. Supports cartilage health.<br>
-         6. Contains essential vitamins.<br>
-         7. Promotes flexibility.<br>
-         8. Anti-inflammatory effect.<br>
-         9. Natural and herbal.<br>
-         10. Recommended for seniors.<br>
-         11. Safe for long-term use.<br>
-         12. Improves mobility.<br>
-         13. No side effects.<br>
-         14. Enhances bone density.<br>
-         15. Boosts overall skeletal health.<br>
-         <br>
-         ✅ எலும்புகளுக்கு உறுதியை வழங்கும்.<br>
-         ✅ மூட்டுகளில் வலியை குறைக்கும்.<br>
-         ✅ இயற்கை மூலிகைகளால் தயாரிக்கப்பட்டது.</p>
-      <div class="price">Price: ₹2000</div>
-      <button class="add-to-cart" onclick="addToCart('Bone Care', 2000)">Add to Cart</button>
+      <!-- Repeat for other products... -->
+      <!-- BONE CARE -->
+      <div class="product">
+        <img src="images/bonecare.png" alt="Bone Care" />
+        <div class="details">
+          <h2>Bone Care - ₹2000</h2>
+          <ul>
+            <li>Strengthens bones naturally.</li>
+            <li>Helps prevent osteoporosis.</li>
+            <li>Increases calcium absorption.</li>
+            <li>Relieves joint pain and stiffness.</li>
+            <li>Supports spinal health.</li>
+            <li>Boosts mobility in aging adults.</li>
+            <li>Ideal for knee/back issues.</li>
+            <li>Contains Ayurvedic herbs.</li>
+            <li>No side effects.</li>
+            <li>Improves bone density.</li>
+            <li>Reduces inflammation.</li>
+            <li>Helps in post-fracture recovery.</li>
+            <li>Improves flexibility.</li>
+            <li>Supports cartilage health.</li>
+            <li>Recommended for all age groups.</li>
+          </ul>
+          <button onclick="addToCart('Bone Care', 2000)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- SLIM CARE -->
+      <div class="product">
+        <img src="images/slimcare.png" alt="Slim Care" />
+        <div class="details">
+          <h2>Slim Care - ₹2000</h2>
+          <ul>
+            <li>Supports natural fat burn.</li>
+            <li>Boosts metabolism.</li>
+            <li>Reduces bloating.</li>
+            <li>Improves digestion.</li>
+            <li>Suppresses unhealthy appetite.</li>
+            <li>Detoxifies the body.</li>
+            <li>Reduces belly fat.</li>
+            <li>Enhances energy levels.</li>
+            <li>Tones body shape.</li>
+            <li>Herbal formulation.</li>
+            <li>No crash dieting needed.</li>
+            <li>Increases confidence.</li>
+            <li>Safe for long-term use.</li>
+            <li>Improves hormonal balance.</li>
+            <li>Results within weeks.</li>
+          </ul>
+          <button onclick="addToCart('Slim Care', 2000)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- NUTRI MIX -->
+      <div class="product">
+        <img src="images/nutrimix.png" alt="Nutri Mix" />
+        <div class="details">
+          <h2>Nutri Mix - ₹2000</h2>
+          <ul>
+            <li>Complete daily nutrition.</li>
+            <li>High protein & vitamins.</li>
+            <li>Boosts immunity.</li>
+            <li>Supports weight gain.</li>
+            <li>Good for all age groups.</li>
+            <li>Improves digestion.</li>
+            <li>Increases energy levels.</li>
+            <li>Reduces tiredness.</li>
+            <li>Strengthens muscles.</li>
+            <li>Rich in natural nutrients.</li>
+            <li>No artificial additives.</li>
+            <li>Recommended for kids too.</li>
+            <li>Balances diet deficiencies.</li>
+            <li>Easy to digest.</li>
+            <li>Daily health booster.</li>
+          </ul>
+          <button onclick="addToCart('Nutri Mix', 2000)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- SKY FLAX -->
+      <div class="product">
+        <img src="images/skyflax.png" alt="Sky Flax" />
+        <div class="details">
+          <h2>Sky Flax - ₹2000</h2>
+          <ul>
+            <li>Rich in omega-3 fatty acids.</li>
+            <li>Improves heart health.</li>
+            <li>Reduces cholesterol levels.</li>
+            <li>Good for skin & hair.</li>
+            <li>Supports hormonal balance.</li>
+            <li>Improves digestion.</li>
+            <li>Helps with weight control.</li>
+            <li>Reduces inflammation.</li>
+            <li>Good source of fiber.</li>
+            <li>Improves brain function.</li>
+            <li>Strengthens immunity.</li>
+            <li>Protects against cancer risks.</li>
+            <li>Balances blood sugar levels.</li>
+            <li>Gluten-free & vegan.</li>
+            <li>Natural detoxifier.</li>
+          </ul>
+          <button onclick="addToCart('Sky Flax', 2000)">Add to Cart</button>
+        </div>
+      </div>
+
     </div>
-  </div>
-
-  <!-- Add Slim Care, Nutrimix, Skyflax sections below with similar format -->
-
-  <script>
-    function addToCart(productName, price) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      let existing = cart.find(p => p.name === productName);
-
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ name: productName, price: price, quantity: 1 });
-      }
-
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(productName + " added to cart!");
-    }
-  </script>
+  </section>
 </body>
 </html>
